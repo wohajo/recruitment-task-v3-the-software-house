@@ -1,3 +1,22 @@
+# NOTES
+
+### Some explainations
+
+- Went for repository pattern as this is not a complicated project
+- The numerical values in the `db.json` are saved as numerical strings, so adding a movie follows this structure and requires a numerical string
+- Different responses from the same endpoint are not desirable in REST APIs - just a heads up :D
+- Validation of genres is on an endpoint level, as the service should only care about proper data
+- `json-db.service.ts` is not tested because I treated is as an external framework - we usually don't want to test external frameworks, and separating it from repositories/services makes it easier for us to test our code only
+
+### Running the app
+
+Running the app is as You would run a normal nest.js app, just mind those two things:
+
+- uploaded `db.json` for easy testing
+- env file is required to run the app
+
+## Generated README
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
