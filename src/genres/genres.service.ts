@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { JsonDbService } from 'src/db/json-db.service';
+import { JsonDbService } from '../db/json-db.service';
 
 @Injectable()
 export class GenresService {

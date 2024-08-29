@@ -11,7 +11,7 @@ import {
 import { MoviesService } from './movies.service';
 import { ERR_MOVIE_EXISTS } from './movies.repository';
 import { MoviesFiltersDto } from './dto/filters.dto';
-import { ValidateGenres } from '../genres/genres-validator';
+import { GenresValidator } from '../genres/genres-validator';
 import { MovieDto } from './dto/movie.dto';
 
 @Controller('movies')
@@ -19,14 +19,14 @@ export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
   @Get()
-  @UseInterceptors(ValidateGenres)
+  @UseInterceptors(GenresValidator)
   getMovies(@Query() dto: MoviesFiltersDto) {
     const data = this.moviesService.get(dto);
     return { data };
   }
 
   @Post()
-  @UseInterceptors(ValidateGenres)
+  @UseInterceptors(GenresValidator)
   addMovie(@Body() movie: MovieDto) {
     const result = this.moviesService.addMovie(movie);
 

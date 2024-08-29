@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { MoviesRepository } from './movies.repository';
-import { MovieEntity } from 'src/movies/movie.entity';
+import { MovieEntity } from '../movies/movie.entity';
 import { MovieDto } from './dto/movie.dto';
 
 @Injectable()

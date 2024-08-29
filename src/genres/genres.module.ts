@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { GenresService } from './genres.service';
-import { JsonDbModule } from 'src/db/json-db.module';
+import { JsonDbModule } from '../db/json-db.module';
 
 @Module({
   providers: [GenresService],

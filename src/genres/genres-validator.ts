@@ -6,10 +6,10 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { GenresService } from 'src/genres/genres.service';
+import { GenresService } from '../genres/genres.service';
 
 @Injectable()
-export class ValidateGenres implements NestInterceptor {
+export class GenresValidator implements NestInterceptor {
   constructor(private readonly genresService: GenresService) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {

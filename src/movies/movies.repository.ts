@@ -1,8 +1,8 @@
-import { JsonDbService } from 'src/db/json-db.service';
-import { MovieEntity } from 'src/movies/movie.entity';
+import { JsonDbService } from '../db/json-db.service';
+import { MovieEntity } from '../movies/movie.entity';
 
 import { Injectable } from '@nestjs/common';
-import { Entity } from 'src/db/entity.enum';
+import { Entity } from '../db/entity.enum';
 import { MovieDto } from './dto/movie.dto';
 
 export const ERR_MOVIE_EXISTS = Symbol('Movie already exists');
