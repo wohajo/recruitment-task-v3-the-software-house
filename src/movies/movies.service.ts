@@ -58,8 +58,8 @@ export class MoviesService {
   }
 
   private getRandomMovie() {
-    const size = this.movieRepository.getSize();
-    const randomId = Math.floor(Math.random() * size) + 1;
+    const count = this.movieRepository.count();
+    const randomId = Math.floor(Math.random() * count) + 1;
 
     return this.movieRepository.getMovieById(randomId);
   }

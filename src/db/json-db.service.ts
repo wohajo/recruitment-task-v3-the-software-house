@@ -35,7 +35,7 @@ export class JsonDbService {
     this.db.get(Entity.movies).push(movie).write();
   }
 
-  public getSize(entity: Entity) {
+  public count(entity: Entity) {
     return this.db.get(entity).size().value();
   }
 

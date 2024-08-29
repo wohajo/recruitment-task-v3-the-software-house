@@ -15,8 +15,8 @@ export class MoviesRepository {
     return this.dbService.getMovies(filter);
   }
 
-  getSize(): number {
-    return this.dbService.getSize(Entity.movies);
+  count(): number {
+    return this.dbService.count(Entity.movies);
   }
 
   getMovieById(id: number): MovieEntity {
@@ -36,7 +36,7 @@ export class MoviesRepository {
   }
 
   private transformForDb(movie: MovieDto): MovieEntity {
-    const nextId = this.dbService.getSize(Entity.movies) + 1;
+    const nextId = this.dbService.count(Entity.movies) + 1;
 
     return {
       id: nextId,
