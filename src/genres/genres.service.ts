@@ -3,9 +3,9 @@ import { JsonDbService } from '../db/json-db.service';
 
 @Injectable()
 export class GenresService {
-  constructor(private readonly dbService: JsonDbService) {}
+  constructor(private readonly jsonDbService: JsonDbService) {}
 
   getGenres() {
-    return this.dbService.getGenres();
+    return this.jsonDbService.getGenres();
   }
 }
