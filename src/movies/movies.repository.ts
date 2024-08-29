@@ -1,4 +1,4 @@
-import { DbService } from 'src/db/json-db.service';
+import { JsonDbService } from 'src/db/json-db.service';
 import { MovieEntity, MovieDto } from 'src/movies/movie.entity';
 
 import { Injectable } from '@nestjs/common';
@@ -8,7 +8,7 @@ export const ERR_MOVIE_EXISTS = Symbol('Movie already exists');
 
 @Injectable()
 export class MoviesRepository {
-  constructor(private readonly dbService: DbService) {}
+  constructor(private readonly dbService: JsonDbService) {}
 
   get(filter: (value: MovieEntity) => boolean): MovieEntity[] {
     return this.dbService.getMovies(filter);

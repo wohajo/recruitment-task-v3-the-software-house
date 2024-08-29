@@ -14,7 +14,7 @@ export type Entities = {
 };
 
 @Injectable()
-export class DbService {
+export class JsonDbService {
   private dbFilePath: string;
   private db: LowdbSync<Entities>;
 
