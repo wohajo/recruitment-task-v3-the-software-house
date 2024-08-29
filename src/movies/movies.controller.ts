@@ -9,10 +9,10 @@ import {
 } from '@nestjs/common';
 
 import { MoviesService } from './movies.service';
-import { MovieDto } from 'src/movies/movie.entity';
 import { ERR_MOVIE_EXISTS } from './movies.repository';
-import { MoviesFiltersDto } from './filters.dto';
-import { ValidateGenres } from './genres-validator';
+import { MoviesFiltersDto } from './dto/filters.dto';
+import { ValidateGenres } from '../genres/genres-validator';
+import { MovieDto } from './dto/movie.dto';
 
 @Controller('movies')
 export class MoviesController {

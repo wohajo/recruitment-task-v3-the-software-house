@@ -4,6 +4,8 @@
 
 - Went for repository pattern as this is not a complicated project
 - The numerical values in the `db.json` are saved as numerical strings, so adding a movie follows this structure and requires a numerical string
+- Opted for returing symbol as error and handling it in the controller, so we have more control what exactly are we returning
+  - this does not concern the validator as it is already on a controller level
 - Different responses from the same endpoint are not desirable in REST APIs - just a heads up :D
 - Validation of genres is on an endpoint level, as the service should only care about proper data
 - `json-db.service.ts` is not tested because I treated is as an external framework - we usually don't want to test external frameworks, and separating it from repositories/services makes it easier for us to test our code only
