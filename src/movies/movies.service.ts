@@ -6,7 +6,7 @@ import { MovieDto } from './dto/movie.dto';
 
 @Injectable()
 export class MoviesService {
-  constructor(private readonly movieRepository: MoviesRepository) {}
+  constructor(private readonly moviesRepository: MoviesRepository) {}
 
   get(filters: { genres?: string[]; duration?: number }) {
     if (!Object.keys(filters).length) {
@@ -17,11 +17,11 @@ export class MoviesService {
   }
 
   addMovie(movie: MovieDto) {
-    return this.movieRepository.add(movie);
+    return this.moviesRepository.add(movie);
   }
 
   private getFilteredMovies(filters: { genres?: string[]; duration?: number }) {
-    const movies = this.movieRepository.get((movie) => {
+    const movies = this.moviesRepository.get((movie) => {
       const { genres, duration } = filters;
 
       const matchesGenres = genres?.length
@@ -58,9 +58,9 @@ export class MoviesService {
   }
 
   private getRandomMovie() {
-    const count = this.movieRepository.count();
+    const count = this.moviesRepository.count();
     const randomId = Math.floor(Math.random() * count) + 1;
 
-    return this.movieRepository.getMovieById(randomId);
+    return this.moviesRepository.getMovieById(randomId);
   }
 }
